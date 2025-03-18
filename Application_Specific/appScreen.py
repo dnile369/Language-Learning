@@ -1,15 +1,14 @@
 import time
 from tkinter import *
 
-class WordUI:
+class AppScreen:
     root = Tk() # class variable
 
-    def run_ui(self):
+    def app_start(self):
         self.main_window()
-        self.heading_frame()
-        self.main_window_canvas_1()
         # time.sleep(10)
-        self.root.mainloop()
+        self.root.mainloop() # with this line, tkinter starts an infinite loop used to run the application,
+        # wait for an event to occur and process the event as long as the window is not closed.
 
     def main_window(self):
         # Main Window
@@ -17,20 +16,18 @@ class WordUI:
         self.root.geometry("400x200")
         self.root.configure(bg="Sky Blue")
 
-    def heading_frame(self):
         # Frame 1
         frame1 = Frame(self.root, width=300, height=100)
         frame1.pack()
         label1 = Label(frame1, text="Learn New Words Everyday", font=("Arial", 22, "bold"), bg="Sky Blue", fg="Black")
         label1.pack()
 
-    def main_window_canvas_1(self):
         # for Entering value or numbers 1st Create and display a canvas on the GUI app
         canvas_widget = Canvas(self.root, width=300, height=150)
         canvas_widget.pack()
         # Canvas1 Header
         label2 = Label(canvas_widget, text="How many new words you learned today!", font=("Arial", 10, "bold"),
-                       bg="Yellow", fg="Black",
+                       bg="Yellow", fg="Black"
                        )
         canvas_widget.create_window(150, 20, window=label2)
 
